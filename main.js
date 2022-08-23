@@ -1,14 +1,14 @@
 const quoteButton = document.getElementById("load-quote");
-quoteButton.addEventListener("click", printQuote);
+// quoteButton.addEventListener("click", printQuote);
 
 const wholeQuote = document.querySelector(".quote");
 const source = document.getElementById("source");
 const citation = document.querySelector(".citation");
 const year = document.querySelector(".year");
+const bgColors = ['red', 'blue', 'teal', 'orange', 'black']
 
 //array of objects
 //keys are quotes,source,cit, citation: ''ation,year
-
 const quoteObj = [
     {quote:'The real test is not whether you avoid this failure, because you won\'t. It\'s whether you let it harden or shame you into inaction, or whether you learn from it; whether you choose to persevere.', source: 'Barack Obama', citation: 'Twitter', year: '2011'}, 
     {quote:'Many of life\'s failures are people who did not realize how close they were to success when they gave up', source: 'Thomas A. Edison', citation: 'Google', year: '1915'}, 
@@ -17,13 +17,21 @@ const quoteObj = [
     {quote:'Fear is the path to the dark side. Fear leads to anger. Anger leads to hate. Hate leads to suffering.', source: 'Yoda', citation: 'The Phantom Menance', year: '1999'}, 
 ];
 
+// set interval 5s
+setInterval(() => {
     //printQuote and grabs objects properties value
-    function printQuote(){
-        let indexGrabber =  quoteObj[Math.floor(Math.random() * quoteObj.length)];
-        wholeQuote.textContent = indexGrabber.quote;
-        source.textContent = indexGrabber.source;
-        citation.textContent = indexGrabber.citation;
-        year.textContent = indexGrabber.year;
-        
-    }
+        function printQuote(){
+            let indexGrabber =  quoteObj[Math.floor(Math.random() * quoteObj.length)];
+            wholeQuote.textContent = indexGrabber.quote;
+            source.textContent = indexGrabber.source;
+            citation.textContent = indexGrabber.citation;
+            year.textContent = indexGrabber.year; 
+            changeColor();
+        }
+        return printQuote();
+    }, 4000);
     
+    function changeColor (){
+         let colorIndx = Math.floor(Math.random() * bgColors.length)
+         document.body.style.backgroundColor = bgColors[colorIndx];
+  }
