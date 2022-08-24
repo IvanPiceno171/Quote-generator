@@ -8,7 +8,7 @@ const year = document.querySelector(".year");
 const bgColors = ['red', 'blue', 'teal', 'orange', 'black']
 
 //array of objects
-//keys are quotes,source,cit, citation: ''ation,year
+//keys are quotes,source,citation,year
 const quoteObj = [
     {quote:'The real test is not whether you avoid this failure, because you won\'t. It\'s whether you let it harden or shame you into inaction, or whether you learn from it; whether you choose to persevere.', source: 'Barack Obama', citation: 'Twitter', year: '2011'}, 
     {quote:'Many of life\'s failures are people who did not realize how close they were to success when they gave up', source: 'Thomas A. Edison', citation: 'Google', year: '1915'}, 
