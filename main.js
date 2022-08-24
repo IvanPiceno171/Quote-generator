@@ -17,11 +17,11 @@ const quoteObj = [
     {quote:'Fear is the path to the dark side. Fear leads to anger. Anger leads to hate. Hate leads to suffering.', source: 'Yoda', citation: 'The Phantom Menance', year: '1999'}, 
 ];
 
-// set interval 5s
+// set interval 4s
 setInterval(() => {
     //printQuote and grabs objects properties value
         function printQuote(){
-            let indexGrabber =  quoteObj[Math.floor(Math.random() * quoteObj.length)];
+            let indexGrabber =  quoteObj[Math.floor(Math.random() * quoteObj.length - 1)];
             wholeQuote.textContent = indexGrabber.quote;
             source.textContent = indexGrabber.source;
             citation.textContent = indexGrabber.citation;
@@ -32,6 +32,6 @@ setInterval(() => {
     }, 4000);
     
     function changeColor (){
-         let colorIndx = Math.floor(Math.random() * bgColors.length)
+         let colorIndx = Math.floor(Math.random() * bgColors.length - 1)
          document.body.style.backgroundColor = bgColors[colorIndx];
   }
